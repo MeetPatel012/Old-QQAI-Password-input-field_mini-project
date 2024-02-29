@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wow this is cool website for password-toggle">
+    <title>Password Toggle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="toggle-mode">
+        <img src="brightness (1).png" alt="The image can not load" id="toggle">
+    </div>
+    <div class='input-box'>
+        <input type="password" class="classvalue" placeholder="Please type your password" id="password">
+        <img src="eye-close.png" id="eyeicon" alt="The text is not loaded">
+    </div>
+
+    <script>
+        let eyeicon = document.getElementById('eyeicon');
+        let password = document.getElementById('password');
+
+        eyeicon.onclick = function () {
+            if (password.type == "password") {
+                password.type = "text";
+                eyeicon.src = "eye-open.png";
+            } else {
+                password.type = "password";
+                eyeicon.src = "eye-close.png";
+            }
+        }
+
+
+       
+        let toggle = document.getElementById('toggle');
+
+        toggle.onclick = function () {
+            
+           if(document.body.classList.toggle("dark-theme")){
+                toggle.src='night-mode.png';
+           }else{
+            toggle.src='brightness (1).png';
+           }
+        }
+            
+
+
+    </script>
+</body>
+
+</html>
